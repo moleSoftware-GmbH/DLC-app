@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<meta charset="utf-8">
+<meta http-equiv="content-type"    content="text/html; charset=utf-8" />
+<meta http-equiv="cache-control"   content="no-cache" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes">
+<title>Lil und Grazzy</title>
+
+
+<link rel="apple-touch-icon" href="images/ios_icon.png" />
+<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body  id="body">
+<div class="devicePortrait"><div></div>
+	<p>Switch to landscape mode</p>
+</div>
+<div class="stage">
+	<div class="controls">
+	<a href="javascript:;" class="hideText">HideText</a> 
+	<a href="javascript:scene3.init();">Play</a> 
+	<a href="javascript:sceneHandler.playAgain();" style="text-indent:0;display:none;">StartOver</a> 
+	<!-- <a href="javascript:scene3.clearCanvas();intro.init();" class="next">Next</a> -->
+	<!-- <div class="debug"></div> -->
+	<a href="javascript:;" class="next">Next</a>
+	<a href="javascript:;" class="prev">Prev</a>
+	<a href="javascript:;" class="playSound">playSound</a>
+	</div>
+
+	<!--
+		** INFO **
+
+		data-scene : atribute is used for seting scene backrgound
+		class scene_x: used for scene handling
+		div texts : is populate with texts from text.js for each scene
+		canvas : animation element
+
+	-->
+
+		<div class="scene scene_0" data-scene="0">
+			<div class="texts"></div>
+
+			<canvas id="canvas0" width="960" height="640"  ></canvas>
+
+	    </div>
+
+		<div class="scene scene_1" data-scene="1">
+			<div class="texts"></div>
+			<div class="helper"><div></div></div>
+			<canvas id="canvas1" width="560" height="820"  ></canvas>
+		<!-- 	<canvas id="clock" width="450" height="450" ></canvas> -->
+	    </div>
+
+		<div class="scene scene_2" data-scene="2">
+		<div class="helper"><div></div></div>
+		<div class="texts"></div>
+		<canvas id="canvas2" width="450" height="450"></canvas>
+
+	    </div>
+
+		<div class="scene scene_3" data-scene="3">
+		<div class="texts"></div>
+		<div class="helper"><div></div></div>
+		<a href="javascript:;" class="sceneActions"></a>
+		<canvas id="canvas3" width="650" height="650" ></canvas>
+	   
+	    </div>	
+
+		<div class="scene scene_4" data-scene="4">
+		<a href="javascript:;" class="sceneActions"></a>
+		<div class="texts"></div>
+	    </div>	    
+
+		<div class="scene scene_5" data-scene="5">
+		<div class="texts"></div>
+		<div class="helper"><div></div></div>
+		<canvas id="canvas5" width="600" height="600" ></canvas>
+	    </div>		
+
+		<div class="scene scene_6" data-scene="6">
+		<div class="texts"></div>
+		<div class="helper"><div></div></div>
+		<canvas id="canvas6" width="650" height="650" ></canvas>
+	    </div>
+	    <div class="scene scene_7" data-scene="7">
+		<div class="texts"></div>
+		<div class="parents"></div>
+	    </div>
+
+		<div class="scene scene_8" data-scene="8">
+		<div class="texts"></div>
+		<div class="helper"><div></div></div>
+		<canvas id="canvas8" width="1000" height="640" ></canvas>
+	    </div>
+
+		<div class="scene scene_9" data-scene="9">
+		<div class="texts"></div>
+		<canvas id="canvas9" width="800" height="850"></canvas>
+	    </div>		 
+
+	    <div class="scene scene_10" data-scene="10">
+		<div class="texts"></div>
+		<canvas id="canvas10" width="800" height="750" ></canvas>
+	    </div>	
+
+	    <div class="scene scene_11" data-scene="11">
+		<div class="texts"></div>
+		<div class="present"><img src="images/got_present.png"></div>
+	    </div>
+
+	    <div class="scene scene_12" data-scene="12">
+		<div class="texts"></div>
+	    </div>
+
+	    <div class="scene scene_13" data-scene="13">
+			<div class="texts"></div>
+			<img src="images/fin.png">
+			<a href="javascript:;" title="Play again" class="playAgain">Play again</a> 
+	    </div>
+
+	    <div class="scene scene_14" data-scene="14">
+		    <div class="customText">
+		    	<img class="logo" src="images/logo-loading.png">
+		    	<p>Grazzy ist unser lustiger Hase, der immer von Karotten träumt – träum' doch mit: So flauschig wie er ist, muss man ihn einfach knuddeln. Grazzy begleitet dich, wohin du willst und wenn er doch mal schmutzig ist, wird er eben gewaschen. Das verändert ihn gar nicht! Verpackt in einem weichen Rucksack ist Grazzy dein perfekter Begleiter.
+		    	</p>
+			<a onclick="javascript: return loadInBrowser(this);" href="https://www.dogslovecats.com/kuschelkissen-dekokissen/kuschelkissen+grazzy.php" title="DogsLoveCats" class="dlc-site">www.dogslovecats.com</a> 
+		    </div>
+		    <div class="customImg">
+		    <div>Dein Hase zum Liebhaben</div>
+		    <a onclick="javascript: return loadInBrowser(this);" href="https://www.dogslovecats.com/kuschelkissen-dekokissen/kuschelkissen+grazzy.php"><img src="images/grazzy.png"></a>
+		    </div>
+			<a href="javascript:window.location.reload();" title="Play again" class="playAgain">Play again</a> 
+	    </div>	
+</div>
+
+
+<audio loop  id="loopingAudio">
+  <source src="sounds/loop.mp3" type="audio/mpeg">
+  <source src="sounds/loop.wav" type="audio/wav">
+</audio>
+
+ <audio  id="playYawn">
+  <source src="sounds/yawn.mp3" type="audio/mpeg">
+  <source src="sounds/yawn.wav" type="audio/wav">
+</audio>
+
+<audio  id="playRing">
+  <source src="sounds/ring.mp3" type="audio/mpeg">
+  <source src="sounds/ring.wav" type="audio/wav">
+</audio> 
+
+<audio  id="playCukoo">
+  <source src="sounds/cukoo.mp3" type="audio/mpeg">
+  <source src="sounds/cukoo.wav" type="audio/wav">
+</audio> 
+
+<audio  id="playWomenYawn">
+  <source src="sounds/women_yawn.mp3" type="audio/mpeg">
+  <source src="sounds/women_yawn.wav" type="audio/wav">
+</audio> 
+
+<audio  id="playGirlLaugh">
+  <source src="sounds/girlLaugh.mp3" type="audio/mpeg">
+  <source src="sounds/girlLaugh.wav" type="audio/wav">
+</audio>
+
+
+<audio  id="playRustling">
+  <source src="sounds/rustling.wav" type="audio/wav">
+</audio> 
+
+<audio  id="playMonsterSqueak">
+  <source src="sounds/monster sound 1.mp3" type="audio/mpeg"><!-- new -->
+</audio>
+
+<audio  id="lightSound">
+  <source src="sounds/turnLightOn.mp3" type="audio/mpeg"><!-- new -->
+</audio>
+
+<audio loop  id="tictac">
+  <source src="sounds/tictac.mp3" type="audio/mpeg"><!-- new -->
+</audio>
+
+
+
+<div class="mask">
+	<div class="logoMask">
+		<img src="images/logo-loading.png">
+		<div class="loadingText">Laden</div>
+	</div>
+</div>
+<script src="js/jquery-3.1.0.slim.js"></script>
+<script src="js/createjs-2015.11.26.min.js"></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/jquery.hammer.js"></script>
+<script src="js/sceneHandler.js"></script>
+<script src="js/scene_0.js"></script>
+<script src="js/scene_1.js"></script>
+<script src="js/scene_2.js"></script>
+<script src="js/scene_3.js"></script>
+<script src="js/scene_5.js"></script>
+<script src="js/scene_6.js"></script>
+<script src="js/scene_8.js"></script>
+<script src="js/scene_9.js"></script>
+<script src="js/scene_10.js"></script>
+<script src="js/clock.js"></script>
+<script src="js/init.js"></script>
+<script src="js/text.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/gestures.js"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+//COLORS
+
+$white 			    : #FFFFFF;	
+$tr-white 			: rgba(255,255,255,.2);	
+$tr-gray 			: rgba(39, 47, 57, 0.7);
+$yellow 			: #F3E904;	
+$pink    			: #EA088C;	
+$blue       		: #27A3DC;	
+$red        	    : #BF202F;	
+$mil-green          : #5B6F5D;	
+$dark-gray          : #272F39;
+$dark               : #333333;
+$black              : #000000;
+$fontColor      : #523725;
+$paper			: #FEF4DA;
+$patch-color : #FFC926;
+
+
+
+
+//FONTS
+@font-face {
+    font-family: 'just_another_hand';
+    src: url('../fonts/justanotherhand-webfont.woff2') format('woff2'),
+         url('../fonts/justanotherhand-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+$mainFont          :'Arial';
+
+//Breakpoints
+
+
+
+
+@mixin retina {
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+@mixin three {
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 3),
+    only screen and (min--moz-device-pixel-ratio: 3),
+    only screen and (-o-min-device-pixel-ratio: 3/1),
+    only screen and (min-device-pixel-ratio: 3),
+    only screen and (min-resolution: 249dpi),
+    only screen and (min-resolution: 3dppx) {
+    @content;
+  }
+}
+
+
+$mobile: "(max-width: 768px)";
+$tablet: "(min-width: 768px) and (max-width: 1280px)";
+$desktop: "(min-width: 1280px)";

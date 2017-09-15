@@ -1,0 +1,88 @@
+@mixin transition($t){
+	-webkit-transition: all $t;
+	-moz-transition: all $t;
+	-o-transition: all $t;
+	-ms-transition: all $t;
+	transition: all $t;
+}
+
+
+@mixin vertical-align {  
+  position: absolute;//position relative doesn`t work for ipad so have this in mind
+  top: 50%;
+  -ms-transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+@mixin text-bubble{
+	padding:.2em .5em;
+	color:$fontColor;
+	opacity: 1;
+	font-family: 'just_another_hand';
+	line-height:1.2em;
+	font-size:2.2em;
+	margin:0;
+	@include transition(1.3s)	
+}
+
+
+@mixin three-d{
+	   -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+}
+
+@mixin texts($top,$right,$bottom,$left,$textColor){
+	.texts{
+		top:$top;
+		right:$right;
+		bottom:$bottom;
+		left:$left;
+			div{
+				color:$textColor;
+			}
+		}	
+
+}
+@mixin paper(){
+	background-color:$paper;
+		background: url(../images/ptexture.jpg) repeat;
+		bottom:inherit;
+		-moz-box-shadow:0px 1px 2px rgba(0,0,0,0.2);
+		-webkit-box-shadow:0px 1px 2px rgba(0,0,0,0.2);
+		box-shadow:0px 1px 2px rgba(0,0,0,0.2);
+}
+@mixin patch($top,$right,$bottom,$left,$rotate){
+			content:"";
+			width:4em;
+			height: 1em;
+			position: absolute;
+			top:$top;
+			right:$right;
+			bottom:$bottom;
+			left:$left;
+			background-color:$patch-color;
+			transform: rotate($rotate);
+			opacity:.6;
+}
+
+
+@mixin helper($left-normal,$top-normal,$left-retina,$top-retina,$left-three,$top-three){
+	.helper{
+		margin-left: $left-normal;
+    	margin-top: $top-normal;
+    	@include retina{
+		margin-left: $left-retina;
+    	margin-top: $top-retina;    		
+    	}
+    	@include three(){
+    	margin-left: $left-three;
+    	margin-top: $top-three;  
+    	}
+	}
+
+
+	}

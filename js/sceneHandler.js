@@ -265,13 +265,13 @@ $(document).on('click', '.sceneActions', function (e) {
 $(document).on('click', '.next', function (e) {
 	setTimeout(function () {
 		sceneHandler.switchScene(e);
-	}, 100);
+	}, 50);
 });
 
 $(document).on('click', '.playAgain', function () {
 	setTimeout(function () {
 		sceneHandler.playAgain();
-	}, 100);
+	}, 50);
 });
 
 
@@ -291,7 +291,7 @@ setTimeout(function () {
 	//run audio loop at the begining
 	//$('.playSound').trigger('click');
 
-}, 100);
+}, 50);
 
 
 

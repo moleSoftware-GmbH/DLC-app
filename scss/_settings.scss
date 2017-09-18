@@ -33,7 +33,7 @@ $mainFont          :'Arial';
 
 
 
-@mixin retina {
+@mixin x2 {
   @media
     only screen and (-webkit-min-device-pixel-ratio: 2),
     only screen and (min--moz-device-pixel-ratio: 2),
@@ -45,7 +45,7 @@ $mainFont          :'Arial';
   }
 }
 
-@mixin three {
+@mixin x3 {
   @media
     only screen and (-webkit-min-device-pixel-ratio: 3),
     only screen and (min--moz-device-pixel-ratio: 3),

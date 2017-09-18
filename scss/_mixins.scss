@@ -3,7 +3,7 @@
 	-moz-transition: all $t;
 	-o-transition: all $t;
 	-ms-transition: all $t;
-	transition: all $t;
+	transition: all $t; 
 }
 
 
@@ -15,13 +15,20 @@
   transform: translate(0, -50%);
 }
 
+@mixin center ($scaleVal){
+	position: relative;
+    top: 50%;
+    transform: translateY(-50%) scale($scaleVal);
+    margin:auto;
+}
+
 @mixin text-bubble{
 	padding:.2em .5em;
 	color:$fontColor;
 	opacity: 1;
 	font-family: 'just_another_hand';
 	line-height:1.2em;
-	font-size:2.2em;
+	font-size:2.2em;   
 	margin:0;
 	@include transition(1.3s)	
 }
@@ -74,15 +81,22 @@
 	.helper{
 		margin-left: $left-normal;
     	margin-top: $top-normal;
-    	@include retina{
+    	@include x2{
 		margin-left: $left-retina;
     	margin-top: $top-retina;    		
     	}
-    	@include three(){
+    	@include x3(){
     	margin-left: $left-three;
     	margin-top: $top-three;  
     	}
 	}
 
+	}
 
+	@mixin backgroundTransition($t){
+		-webkit-transition: background-image $t linear;
+		-moz-transition: background-image $t linear;
+		-o-transition: background-image $t linear;
+		-ms-transition: background-image $t linear;
+		transition: background-image $t linear;
 	}

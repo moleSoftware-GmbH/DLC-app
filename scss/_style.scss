@@ -5,6 +5,11 @@ body,html{
     padding: 0;
     overflow: hidden;
 }
+.debug{
+	color:yellow;
+	background-color:#000;
+	max-width: 150px;
+}
 .hidden{
 	display:none;
 }
@@ -22,9 +27,6 @@ body,html{
 	height: 100%;
 	pointer-events:none;
 
-
-
-
 	a{
 		pointer-events:all;
 		display: block;
@@ -32,7 +34,7 @@ body,html{
 		height: 60px;	
 		text-indent: -9999px;	
 		position: absolute;
-		@include three() @include retina(){
+		@include x3() @include x2(){
 			width:80px;
 			height: 40px;
 			background-size: contain;
@@ -44,7 +46,7 @@ body,html{
 	bottom:8%;
 	background:url(../icn/icn-next.png);
 	cursor:pointer;
-	@include three() @include retina(){
+	@include x3() @include x2(){
 		background-size: contain;
 	}
 
@@ -55,7 +57,7 @@ body,html{
 	bottom:8%;
 	background:url(../icn/icn-prev.png);
 	cursor:pointer;
-	@include three() @include retina(){
+	@include x3() @include x2(){
 		background-size: contain;
 	}	
 	}	
@@ -63,7 +65,7 @@ body,html{
 	right: 4%;
 	top:8%;
 	background:url(../icn/icn-play-sound.png);
-	@include three() @include retina(){
+	@include x3() @include x2(){
 		background-size: contain;
 	}
 	}
@@ -71,7 +73,7 @@ body,html{
 	right: 14%;
 	top:8%;
 	background:url(../icn/icn-dialog.png);
-	@include three() @include retina(){
+	@include x3() @include x2(){
 		background-size: contain;
 	}	
 	}
@@ -116,10 +118,10 @@ body,html{
 
 	div{
 		@include text-bubble;
-		@include retina{
+		@include x2{
 			font-size:2.2em;
 		}
-		@include three() @include retina(){
+		@include x3() @include x2(){
 			font-size:1.5em;
 		}
 	}
@@ -172,7 +174,7 @@ body,html{
 		bottom:0;
 		left:0;
 		right:0;
-		@include retina{
+		@include x2{
 		width:100%;
 	}
 	}
@@ -197,7 +199,7 @@ body,html{
 		&.active{
 			margin-left:25%;
 		}
-		@include retina{
+		@include x2{
 			width:30%;
 			margin-right: 10em;
 		}		
@@ -221,7 +223,7 @@ body,html{
 	&.active{
 		top:0;
 		}
-	@include retina{
+	@include x2{
 		//right: 15%;
 	}
 	}
@@ -229,7 +231,7 @@ body,html{
 	.helper{
 		margin-left: 53%;
     	margin-top: 22%;
-    	@include retina{
+    	@include x2{
 		margin-left: 52%;
     	margin-top: 22%;    		
     	}
@@ -246,13 +248,13 @@ body,html{
 	&.active{
 		background-position: 51% 1%;
     	background-size: 194%;
-    	@include three() @include retina(){
+    	@include x3() @include x2(){
     		background-position: 51% 13%;
     	}
     	#canvas2{
     		transform:scale(.7);
     		top:6em;
-    		@include three() @include retina(){
+    		@include x3() @include x2(){
     			transform: scale(.55);
     			top: -2em;
     		}
@@ -266,17 +268,18 @@ body,html{
 
 .scene_3{
 	background-size:cover;
+	@include backgroundTransition(1s);
 	canvas{
 		position: absolute;
 		right:10%;
 		top:5em;
 		transform: scale(.45);
-			@include retina(){
-				top:-1em;
+			@include x2(){
+				top:10%;
 				right:-11em;
 				transform: scale(.35);
 			}
-			@include three(){
+			@include x3(){
 				top:-9em;
 				right:-17%;
 				transform: scale(.25);
@@ -292,9 +295,9 @@ body,html{
 		position:absolute;
 		z-index: 9;
 		margin:12em 5em 0 5em;
-		@include three() @include retina(){
+		@include x3() @include x2(){
 		height: 480px;
-	    z-index: 99; 
+	    z-index: 12;
 	    margin: 8em 0em;
 		}
 	}
@@ -302,6 +305,7 @@ body,html{
 }
 .scene_4{
 	background-size:cover;
+	@include backgroundTransition(1s);
 	.texts{
 		top:2em;
 	}
@@ -311,7 +315,7 @@ body,html{
 		position:absolute;
 		z-index: 9;
 		margin:20em 5em;
-		@include three() @include retina(){
+		@include x3() @include x2(){
 		height: 480px;
 	    z-index: 9;
 	    margin: 6em 0em;
@@ -321,49 +325,21 @@ body,html{
 .scene_5{
 	background-size:100% 100%;
 	canvas{
-		position: absolute;
-	    right: 10%;
-	    top: 20%;
-		@include retina{
-			top:2em;
-			right:10%;
-		}
-		@include three() @include retina(){
-			transform: scale(.6);
-		}
-		@include three(){
-			top: -2em;
-		}
+	@include center(.6);
 	}
 	@include helper(62%,26%,57%,26%,48%,26%);	
 
 	@include texts(20%,null,null,20%,null);
-		@include three() @include retina(){
+		@include x3() @include x2(){
 			@include texts(10%,null,null,10%,null);
 		}	
 }
 .scene_6{
 	background-size:100% 100%;
 	canvas{
-		position: absolute;
-	    top: 10%;
-	    left:10em;
-
-		@include three() @include retina(){
-			margin-top:-11em;
-			left:-4em;
-			transform:scale(.55);
-		}
-		@include retina{
-			left:0;
-			top:20%;
-			transform:scale(.8);
-		}   		
+	@include center(.6);
 	}
-	@include texts(null,20%,30%,inherit,null);
-	@include retina{
-		@include texts(null,10%,30%,inherit,null);
-	}
+	@include texts(15%,null,null,15%,null);
 	@include helper(38%,20%,32%,18%,45%,15%);	
 }
 .scene_7{
@@ -379,18 +355,18 @@ body,html{
 		width:100%;
 		height: 100%;
 		background-size:50%;
-		@include three() @include retina(){
+		@include x3() @include x2(){
 			width:100%;
 			top:50%;
 		}
 	}
 	@include texts(20%,10%,null,inherit,null);
-	@include three() @include retina(){
+	@include x3() @include x2(){
 		@include texts(10%,10%,null,inherit,null);
 	}
 	.texts{
 	max-width:45%;
-	@include three() @include retina(){
+	@include x3() @include x2(){
 		max-width:55%;
 	}
 	}
@@ -404,12 +380,12 @@ body,html{
 			right: 0;
 			margin: 0 auto;
 			transform:scale(.8);
-		@include retina{
+		@include x2{
 
 			width:80%;
 			margin-top:3em;
 		}
-		@include three(){
+		@include x3(){
 			transform:scale(.8);
 			top:-5em;
 			left: 5em;
@@ -431,7 +407,7 @@ body,html{
 		left:0;
 		right:0;
 		margin:0 auto;
-		@include retina{
+		@include x2{
 			top:15%;
 			transform:scale(.7);
 		} 
@@ -445,7 +421,7 @@ body,html{
 		bottom:0;
 		left:0;
 		right:0;
-		@include retina{
+		@include x2{
 			top:70%;
 		}
 	}
@@ -461,7 +437,7 @@ body,html{
 		position: absolute;
 		top:24%;
 		left:5%;
-		@include retina{
+		@include x2{
 				transform:scale(.6);
 			    top: 14%;
     			left: 0%;
@@ -478,7 +454,7 @@ body,html{
 		right:0;
 		margin-left:30%;
 		transform:scale(.8);
-		@include retina{
+		@include x2{
 			top:35%;
 			transform:scale(1);
 		}
@@ -491,7 +467,7 @@ body,html{
 .scene_11{
 	@include texts(20%,null,null,5%,null);
 	background-size:cover;
-	@include retina{
+	@include x2{
 		background-size:110% 100%;
 	}
 	.present{
@@ -499,7 +475,7 @@ body,html{
 		width:30%;
 		@include vertical-align;
 		position:relative;
-		@include retina{
+		@include x2{
 			top:35%;
 			transform:scale(1);
 		}		
@@ -519,7 +495,7 @@ body,html{
 .scene_12{
 	@include texts(5%,null,null,5%,null);
 	background-size:100% 100%;
-	@include retina{
+	@include x2{
 		background-size:110% 100%;
 	}	
 	.texts{
@@ -590,11 +566,11 @@ body,html{
 		    	transform: scale(.3);
 		    	opacity: 1;
 		    	right:-10em;
-		 	@include retina() {
+		 	@include x2() {
 		 		margin-top:-18em;
 		 		width:80%;
 			}
-			@include three() {
+			@include x3() {
 		    top: 0em;
 		    left: 11em;
 		    transform: scale(0.4);
@@ -615,7 +591,7 @@ body,html{
 		margin-top:-3em;
 		margin-left:2em;
 		max-width:50%;
-		@include three() @include retina(){
+		@include x3() @include x2(){
 			margin-top:-8em;
 
 		}
@@ -627,7 +603,7 @@ body,html{
 		width:50%;
 		float:left;
 		margin-top:12%;
-		@include three() @include retina(){
+		@include x3() @include x2(){
 			margin-top:1em;
 		}
 	}
@@ -637,7 +613,7 @@ body,html{
 			font-size: 2em;
 			color:$fontColor;
 			padding:0 2em;
-			@include three() @include retina(){
+			@include x3() @include x2(){
 				font-size:1.4em;
 			}
 		}
@@ -650,7 +626,7 @@ body,html{
 		
 		img{
 			width:70%;
-			@include three() @include retina(){
+			@include x3() @include x2(){
 				margin-left:5em;
 			}
 		}
@@ -658,7 +634,7 @@ body,html{
 			font-family: 'just_another_hand';
 			font-size: 4em;
 			color:$fontColor;
-			@include three() @include retina(){
+			@include x3() @include x2(){
 				font-size:2em;
 				line-height: 3em;
 			}

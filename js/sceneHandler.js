@@ -8,6 +8,7 @@ var sceneHandler = {
 	slideDuration: 10000, //duration between slide change
 	lastScene: 14, //set this if you have more than 14 scenes,
 	backgroundSoundInit: false,
+	debugScenes: false,
 
 	switchScene: function (e) {
 		var that = $(e.target).attr('class');
@@ -20,7 +21,7 @@ var sceneHandler = {
 
 			setTimeout(function () {
 				$('.scene_2').addClass('active');
-			}, 2000);
+			}, 100);
 		}
 		if (this.currentScene == '3' || this.currentScene == '1') {
 			if (!tictac.paused && tictac.currentTime) {
@@ -48,7 +49,8 @@ var sceneHandler = {
 		}
 		sceneHandler.getScene(); //currentScene,nextScene,prevScene
 		console.log('sceneHandler:' + currentScene + ':' + nextScene + ':' + prevScene);
-		//$('.debug').text(this.currentScene);
+
+		sceneHandler.debug();
 
 		sceneHandler.auto();
 	},
@@ -119,6 +121,7 @@ var sceneHandler = {
 		$('.scene_' + this.currentScene).show();
 		$('.prev').hide();
 		sceneHandler.auto();
+		sceneHandler.debug();
 	},
 	setBackgrounds: function (e) {
 		var that = $(e.target).attr('class');
@@ -185,6 +188,11 @@ var sceneHandler = {
 		} else {
 			$('.devicePortrait').hide();
 		}
+	},
+	debug:function(){
+		if (this.debugScenes) {
+			$('.debug').text(this.currentScene + "/" +window.innerWidth + '/' + pixelRatio);
+		}
 	}
 }
 
@@ -195,7 +203,7 @@ $(document).on('click', '.hideText', function () {
 $(document).on('click', '.prev', function (e) {
 	setTimeout(function () {
 		sceneHandler.switchScene(e);
-	}, 1000);
+	}, 50);
 });
 
 $(document).on('click', '#canvas1', function (e) {
@@ -254,6 +262,8 @@ $(document).on('click', '#canvas6', function (e) {
 
 });
 
+
+
 $(document).on('click', '#canvas8', function (e) {
 	Audio.playFx('playMonsterSqueak');
 });
@@ -295,8 +305,7 @@ setTimeout(function () {
 
 
 
-var pr = window.devicePixelRatio;
-console.log('devicePixelRatio' + pr);
+var pixelRatio = window.devicePixelRatio;
 
 $(document).on("click", '.scene_3 .sceneActions', function (e) {
 	var that = $(e.target);
